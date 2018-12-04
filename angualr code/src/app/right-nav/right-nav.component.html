@@ -1,0 +1,9 @@
+<div class = "right-panel">
+    <input type="button" value="Add Recipe" class="add-button" (click)="add()">
+    <br>
+    <select type="text" [(ngModel)]="recipe" class="add-button" (change)="onValChange(recipe)">
+        <option value="-1" seleted >Recipe</option>
+        <option  *ngFor="let recipe of recipeData" value="{{recipe.id}}">{{recipe.name}}</option>
+</select>
+
+</div>

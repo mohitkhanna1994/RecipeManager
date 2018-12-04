@@ -1,0 +1,11 @@
+.control-label{
+    color:#69A8FD;
+ 
+ 
+  display: inline-block;
+  width:150px;
+}
+
+.form-control{
+    margin: 10px; 
+}

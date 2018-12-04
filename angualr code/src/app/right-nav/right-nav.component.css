@@ -1,0 +1,10 @@
+.right-panel{
+    width: 250px;
+    float: left;
+    height:500px;
+}
+
+.add-button{
+    margin: 20px;
+    width: 100px;
+}
