@@ -10,7 +10,9 @@ Build the project using the following command:
 
 3) mvn spring-boot:run -Dspring.profiles.active=local -Dserver.address='your ip'
 
-
+4) Go to <your ip>:8080/swagger-ui.html#/ to see the swagger documentation of the services.
+  
+  
 
 Steps to run the angular code
 
