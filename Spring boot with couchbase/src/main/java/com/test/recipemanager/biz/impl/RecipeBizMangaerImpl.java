@@ -17,15 +17,23 @@ public class RecipeBizMangaerImpl implements RecipeBizManager {
 
 	@Autowired
 	RecipeDao recipeDao;
-	
+
 	public int addRecipe(RecipeObj recipeObj) throws RecipeException {
 		int code = RecipeConstant.FUNC_RETURN_CODE_400;
+
+		List<DropdownObj> allRecipes = getDropdown();
+		for (DropdownObj recipe : allRecipes) {
+			if (recipe.getName().equalsIgnoreCase(recipeObj.getName())) {
+				throw new RecipeException("Recipe with this name already exists. Please give another name");
+			}
+		}
 		try {
-		recipeObj.setId();
-		recipeObj.setDocId();
-		recipeObj.setMeta();
-		code = recipeDao.addRecipe(recipeObj);
-		}catch (Exception e) {
+			recipeObj.setId();
+			recipeObj.setDocId();
+			recipeObj.setMeta();
+			code = recipeDao.addRecipe(recipeObj);
+		} catch (Exception e) {
+//			e.printStackTrace();
 			throw new RecipeException("Failed to add recipe");
 		}
 		return code;
