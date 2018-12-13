@@ -1,0 +1,23 @@
+<h1>Add Recipe</h1>
+
+<form [formGroup]="productForm" (ngSubmit)="add(productForm.value)" ngNativeValidate>
+
+  <label>
+    Name: <input formControlName="name" required/>
+  </label>
+  <h2>Ingredients</h2>
+
+  <div formArrayName="ingredients">
+    <div *ngFor="let item of ingredients.controls; let pointIndex=index" [formGroupName]="pointIndex">
+    <label>
+      Ingredient: <input formControlName="ing" required/>
+    </label>
+    &nbsp;<button type="button" (click)="deleteSellingPoint(pointIndex)">Delete Ingredient</button>
+    </div>
+    <br>
+    <button type="button" (click)="addSellingPoint()">Add Ingredient</button>
+  </div>
+  <br>
+  <input type="submit"  value="Submit" >&nbsp;
+  <input type="button" (click)="reset()" value="Reset">
+</form>

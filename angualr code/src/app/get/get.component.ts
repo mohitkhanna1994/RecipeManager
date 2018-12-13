@@ -14,10 +14,7 @@ export class GetComponent implements OnInit {
   public subscription : Subscription;
   public recipe: any;
   public recipeName :any;
-  public ing1 :any;
-  public ing2 :any;
-  public ing3 :any;
-  public ing4 :any;
+  public ingList :any;
   constructor(private getService:GetRecipeService,private globalService:GlobalService) { }
 
   ngOnInit() {
@@ -38,10 +35,8 @@ export class GetComponent implements OnInit {
   getRecipe(data){
     this.recipe = data.result;
     this.recipeName = this.recipe.name;
-    this.ing1 = this.recipe.ing1;
-    this.ing2 = this.recipe.ing2;
-    this.ing3 = this.recipe.ing3;
-    this.ing4 = this.recipe.ing4;
+    this.ingList = this.recipe.ingredients;
+    console.log(this.ingList)    
   }
 
   getReciepeForId(){

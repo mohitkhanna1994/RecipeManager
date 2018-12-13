@@ -1,11 +1,14 @@
 <p>
  <span *ngIf ="recipeName" class="ing" >{{recipeName}} - Ingredient  List</span>
  <br>
- <span *ngIf ="ing1" class="ing">Ingredient 1: {{ing1}}</span>
+ <!-- <span *ngIf ="ing1" class="ing">Ingredient 1: {{ing1}}</span>
  <br>
  <span *ngIf ="ing2" class="ing">Ingredient 2: {{ing2}}</span>
  <br>
  <span *ngIf ="ing3" class="ing">Ingredient 3: {{ing3}}</span>
  <br>
- <span *ngIf ="ing4" class="ing">Ingredient 4: {{ing4}}</span>
+ <span *ngIf ="ing4" class="ing">Ingredient 4: {{ing4}}</span> -->
+ <span *ngFor = "let ingrident of ingList;let i = index">
+     <p>Ingredient {{i+1}}: {{ingrident.ing}}</p>
+ </span>
 </p>

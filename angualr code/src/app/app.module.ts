@@ -16,6 +16,7 @@ import { AddService } from './service/add.service';
 import { GetComponent } from './get/get.component';
 import { GetRecipeService } from './service/getRecipe.service';
 import { GlobalService } from './service/global.service';
+import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { GlobalService } from './service/global.service';
     RightNavComponent,
     AddComponent,
     HomeComponent,
-    GetComponent    
+    GetComponent,
+    AddRecipeComponent    
   ],
   imports: [
     BrowserModule,
