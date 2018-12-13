@@ -1,6 +1,7 @@
 package com.test.recipemanager.model;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.UUID;
 
 import com.couchbase.client.java.repository.annotation.Field;
@@ -19,8 +20,11 @@ public class RecipeObj implements Serializable {
 	private String docId;
 
 	@Field
-	private String name, ing1, ing2, ing3, ing4, id;
+	private String name, id;
 
+	@Field
+	List<Ingredient> ingredients;
+	
 	@Field
 	private Meta meta;
 
@@ -40,8 +44,8 @@ public class RecipeObj implements Serializable {
 
 	@Override
 	public String toString() {
-		return "RecipeObj [docId=" + docId + ", name=" + name + ", ing1=" + ing1 + ", ing2=" + ing2 + ", ing3=" + ing3
-				+ ", ing4=" + ing4 + ", meta=" + meta + "]";
+		return "RecipeObj [docId=" + docId + ", name=" + name + ", id=" + id + ", ingredients=" + ingredients
+				+ ", meta=" + meta + "]";
 	}
 
 }
