@@ -31,12 +31,15 @@ export class AddComponent implements OnInit {
     this.addService.addRecipe(formdata,this);
   }
   addRecipe(response){
-    alert("added successfully");
+    alert("Recipe added successfully");
     this.addForm.reset();
     //emitting the event so that the drpdown can be updated on the go
     this.globalService.notifyOther({option:'dropdown'})
   }
   reset(){
     this.addForm.reset();
+  }
+  addRecipeError(error){
+    alert(error.error.message);
   }
 }

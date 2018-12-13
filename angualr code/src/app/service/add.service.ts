@@ -21,6 +21,7 @@ export class AddService {
     },
     error=>{
         console.log("error")
+        callback.addRecipeError(error);
     });
   }
 }
